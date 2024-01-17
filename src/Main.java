@@ -4,7 +4,9 @@ public class Main {
         String url = "jdbc:mysql://localhost:3306/testing_JDBC";
         String username = "root";
         String password = "Pintush@12345";
-        String query = "delete  from student where id=3;";
+        String query = "UPDATE student \n" +
+                "SET name = \"Soni Agrawal\" , job_title = \"Sr. Front-end Developer\"\n" +
+                "WHERE id = 4;";
 
 
         try{
@@ -24,10 +26,10 @@ public class Main {
             int row= stmt.executeUpdate(query);
             if(row>0){
                 System.out.println();
-                System.out.println("Deleted Your Data's  Successfully...");
+                System.out.println("Updated Your Data's  Successfully...");
             }else{
                 System.out.println();
-                System.out.println("Not Deleted Your Data's...");
+                System.out.println("Not Updated Your Data's...");
             }
 
             con.close();
